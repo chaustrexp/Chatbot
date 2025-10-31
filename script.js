@@ -1,261 +1,183 @@
 /**
- * ========================================
+ * ===================================
  * SCRIPT PRINCIPAL DEL PORTAFOLIO
- * ========================================
- * Este archivo contiene toda la funcionalidad JavaScript
- * para hacer el portafolio interactivo.
+ * ===================================
+ * Este archivo maneja la funcionalidad interactiva del sitio web
  */
 
-/**
- * Espera a que el DOM esté completamente cargado antes de ejecutar el código
- * Esto asegura que todos los elementos HTML existan cuando intentamos acceder a ellos
- */
+// Esperar a que el documento HTML esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ========================================
-    // MENÚ HAMBURGUESA PARA MÓVIL
-    // ========================================
+    /**
+     * ===================================
+     * MANEJO DEL FORMULARIO DE CONTACTO
+     * ===================================
+     */
     
-    // Obtener los elementos del menú hamburguesa y del menú de navegación
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+    // Obtener referencia al formulario de contacto por su ID
+    const contactoForm = document.getElementById('contacto-form');
     
-    // Si el menú hamburguesa existe (para evitar errores)
-    if (hamburger && navMenu) {
-        // Agregar un evento de clic al menú hamburguesa
-        hamburger.addEventListener('click', function() {
-            // Alternar la clase 'active' en el menú de navegación
-            // Esto mostrará/ocultará el menú en dispositivos móviles
-            navMenu.classList.toggle('active');
-        });
+    // Agregar un "escuchador" de eventos para cuando se envíe el formulario
+    contactoForm.addEventListener('submit', function(event) {
+        // Prevenir el comportamiento por defecto (recargar la página)
+        event.preventDefault();
         
-        // Cerrar el menú cuando se hace clic en un enlace
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                // Quitar la clase 'active' para cerrar el menú
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-    
-    // ========================================
-    // EFECTO DE SCROLL EN LA BARRA DE NAVEGACIÓN
-    // ========================================
-    
-    const navbar = document.querySelector('.navbar');
-    
-    // Función que se ejecuta cuando el usuario hace scroll
-    function handleScroll() {
-        if (window.scrollY > 100) {
-            // Si el scroll es mayor a 100px, agregar sombra a la barra
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-        } else {
-            // Si está en la parte superior, quitar la sombra
-            navbar.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
+        // Obtener los valores de los campos del formulario
+        const nombre = document.getElementById('nombre').value;
+        const correo = document.getElementById('correo').value;
+        const mensaje = document.getElementById('mensaje').value;
+        
+        // Validación básica: verificar que todos los campos estén llenos
+        if (nombre.trim() === '' || correo.trim() === '' || mensaje.trim() === '') {
+            alert('Por favor, completa todos los campos del formulario.');
+            return; // Detener la ejecución si hay campos vacíos
         }
-    }
-    
-    // Escuchar el evento de scroll en la ventana
-    window.addEventListener('scroll', handleScroll);
-    
-    // ========================================
-    // MANEJO DEL FORMULARIO DE CONTACTO
-    // ========================================
-    
-    // Obtener el formulario de contacto por su ID
-    const contactForm = document.getElementById('contactForm');
-    
-    // Si el formulario existe, agregar un evento para cuando se envíe
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            // Prevenir el comportamiento por defecto (recargar la página)
-            event.preventDefault();
-            
-            // Obtener los valores de los campos del formulario
-            const nombre = document.getElementById('nombre').value;
-            const correo = document.getElementById('correo').value;
-            const mensaje = document.getElementById('mensaje').value;
-            
-            // Validar que todos los campos estén llenos
-            // (La validación HTML5 con 'required' también lo hace, pero esta es una validación extra)
-            if (nombre && correo && mensaje) {
-                // Mostrar mensaje en la consola del navegador
-                console.log('Formulario enviado correctamente');
-                
-                // También podemos mostrar información del formulario (opcional, para debugging)
-                console.log('Datos del formulario:', {
-                    nombre: nombre,
-                    correo: correo,
-                    mensaje: mensaje
-                });
-                
-                // Aquí normalmente enviarías los datos a un servidor
-                // Ejemplo con fetch (comentado porque no hay servidor):
-                /*
-                fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        nombre: nombre,
-                        correo: correo,
-                        mensaje: mensaje
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Respuesta del servidor:', data);
-                    alert('Mensaje enviado con éxito!');
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Hubo un error al enviar el mensaje');
-                });
-                */
-                
-                // Limpiar el formulario después de enviar
-                contactForm.reset();
-                
-                // Mostrar un mensaje de éxito al usuario (opcional)
-                // Puedes descomentar esta línea si quieres mostrar una alerta
-                // alert('¡Mensaje enviado correctamente!');
-                
-            } else {
-                // Si algún campo está vacío, mostrar mensaje de error
-                console.error('Por favor, completa todos los campos');
-                alert('Por favor, completa todos los campos del formulario');
-            }
-        });
-    }
-    
-    // ========================================
-    // ANIMACIÓN DE BARRAS DE HABILIDADES AL SCROLL
-    // ========================================
-    
-    // Función para animar las barras de habilidades cuando son visibles
-    function animateSkills() {
-        // Obtener todas las barras de progreso
-        const skillBars = document.querySelectorAll('.skill-progress');
         
-        // Crear un observador que detecta cuando un elemento entra en la vista
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                // Si el elemento es visible en la pantalla
-                if (entry.isIntersecting) {
-                    // Obtener el ancho que está definido en el atributo style
-                    const width = entry.target.style.width;
-                    // Reiniciar el ancho para que la animación funcione
-                    entry.target.style.width = '0';
-                    // Usar setTimeout para aplicar el ancho después de un pequeño delay
-                    setTimeout(() => {
-                        entry.target.style.width = width;
-                    }, 100);
-                    // Dejar de observar este elemento una vez que se animó
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            // Opciones: el elemento debe estar 50% visible para activar la animación
-            threshold: 0.5
-        });
+        // Mostrar mensaje en la consola del navegador
+        console.log('Formulario enviado correctamente');
         
-        // Observar cada barra de habilidades
-        skillBars.forEach(bar => {
-            observer.observe(bar);
-        });
-    }
+        // Opcional: Mostrar un mensaje de confirmación al usuario
+        alert('¡Gracias por tu mensaje! Te contactaré pronto.');
+        
+        // Limpiar el formulario después del envío
+        contactoForm.reset();
+    });
     
-    // Llamar a la función cuando el DOM esté listo
-    animateSkills();
     
-    // ========================================
-    // SCROLL SUAVE A SECCIONES
-    // ========================================
+    /**
+     * ===================================
+     * NAVEGACIÓN SUAVE (SMOOTH SCROLL)
+     ===================================
+     * Hace que al hacer clic en los enlaces del menú,
+     * la página se desplace suavemente hacia la sección
+     */
     
     // Obtener todos los enlaces del menú de navegación
-    const menuLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+    const navLinks = document.querySelectorAll('.nav-menu a');
     
-    // Agregar evento a cada enlace
-    menuLinks.forEach(link => {
+    // Agregar evento de clic a cada enlace
+    navLinks.forEach(function(link) {
         link.addEventListener('click', function(event) {
-            // Prevenir el comportamiento por defecto del enlace
-            event.preventDefault();
+            // Obtener el destino del enlace (ej: #presentacion, #proyectos)
+            const href = this.getAttribute('href');
             
-            // Obtener el ID de la sección desde el atributo href
-            const targetId = this.getAttribute('href');
-            
-            // Obtener el elemento de destino
-            const targetSection = document.querySelector(targetId);
-            
-            // Si la sección existe, hacer scroll suave hasta ella
-            if (targetSection) {
-                // Calcular la posición, restando la altura de la barra de navegación
-                const offsetTop = targetSection.offsetTop - 80;
+            // Verificar que el enlace sea una sección interna (empieza con #)
+            if (href.startsWith('#')) {
+                event.preventDefault(); // Prevenir el salto brusco
                 
-                // Hacer scroll suave
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                // Buscar el elemento de la sección destino
+                const targetSection = document.querySelector(href);
+                
+                // Si la sección existe, desplazarse hacia ella suavemente
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth', // Desplazamiento suave
+                        block: 'start'      // Alinear al inicio de la sección
+                    });
+                }
             }
         });
     });
     
-    // ========================================
-    // EFECTO DE PARALLAX EN EL HERO (OPCIONAL)
-    // ========================================
     
-    // Crear un efecto sutil de movimiento en el fondo del hero al hacer scroll
-    const hero = document.querySelector('.hero');
+    /**
+     * ===================================
+     * EFECTO DE SCROLL EN LA NAVEGACIÓN
+     * ===================================
+     * Cambiar el estilo de la barra de navegación cuando
+     * el usuario hace scroll hacia abajo
+     */
     
-    if (hero) {
-        window.addEventListener('scroll', function() {
-            // Calcular la posición del scroll
-            const scrolled = window.pageYOffset;
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        const navbar = document.querySelector('.navbar');
+        
+        // Agregar sombra más pronunciada cuando se hace scroll
+        if (currentScroll > 50) {
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
+        } else {
+            navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.2)';
+        }
+        
+        lastScroll = currentScroll;
+    });
+    
+    
+    /**
+     * ===================================
+     * FUNCIONALIDAD DE BOTONES "VER MÁS"
+     * ===================================
+     * Manejar los clics en los botones de proyectos
+     */
+    
+    // Obtener todos los botones "Ver más" de los proyectos
+    const verMasButtons = document.querySelectorAll('.btn-ver-mas');
+    
+    // Agregar evento de clic a cada botón
+    verMasButtons.forEach(function(button, index) {
+        button.addEventListener('click', function() {
+            // Obtener el título del proyecto (está en el h3 de la tarjeta)
+            const proyectoCard = this.closest('.proyecto-card');
+            const proyectoTitle = proyectoCard.querySelector('h3').textContent;
             
-            // Aplicar un efecto de parallax muy sutil
-            // Dividimos por un número grande para que el efecto sea suave
-            const parallax = scrolled * 0.5;
+            // Mostrar información en la consola
+            console.log(`Proyecto seleccionado: ${proyectoTitle}`);
             
-            // Aplicar la transformación al hero
-            hero.style.transform = `translateY(${parallax}px)`;
+            // Opcional: Mostrar alerta al usuario
+            // En una aplicación real, aquí podrías redirigir a una página de detalle
+            alert(`Has seleccionado el proyecto: ${proyectoTitle}\n\nEn una versión real, esto te llevaría a la página de detalles del proyecto.`);
         });
+    });
+    
+    
+    /**
+     * ===================================
+     * EFECTO DE ANIMACIÓN AL HACER SCROLL
+     * ===================================
+     * Hacer que las tarjetas aparezcan con animación
+     * cuando el usuario hace scroll hacia ellas
+     */
+    
+    // Función para verificar si un elemento es visible en la pantalla
+    function isElementInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
     
-    // ========================================
-    // VALIDACIÓN EN TIEMPO REAL DEL FORMULARIO (OPCIONAL)
-    // ========================================
-    
-    // Obtener los campos del formulario
-    const nombreInput = document.getElementById('nombre');
-    const correoInput = document.getElementById('correo');
-    const mensajeInput = document.getElementById('mensaje');
-    
-    // Validar el campo de correo mientras el usuario escribe
-    if (correoInput) {
-        correoInput.addEventListener('blur', function() {
-            // Expresión regular para validar formato de email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            // Si el email no es válido, mostrar un mensaje
-            if (!emailRegex.test(this.value)) {
-                this.style.borderColor = '#ef4444'; // Rojo para error
-                console.warn('El formato del correo electrónico no es válido');
-            } else {
-                this.style.borderColor = 'rgba(56, 189, 248, 0.2)'; // Color normal
+    // Función para agregar animación a los elementos
+    function animateOnScroll() {
+        // Seleccionar todas las tarjetas
+        const cards = document.querySelectorAll('.experiencia-card, .habilidad-card, .proyecto-card');
+        
+        cards.forEach(function(card) {
+            // Si la tarjeta está visible y no tiene la clase 'animated', agregarla
+            if (isElementInViewport(card) && !card.classList.contains('animated')) {
+                card.classList.add('animated');
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                // Animar la aparición
+                setTimeout(function() {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
             }
         });
     }
     
-    // ========================================
-    // MENSAJE DE CONSOLA DE BIENVENIDA
-    // ========================================
+    // Ejecutar la animación cuando se hace scroll
+    window.addEventListener('scroll', animateOnScroll);
     
-    console.log('%c🚀 Bienvenido al portafolio de Welinton Suarez', 'color: #38bdf8; font-size: 16px; font-weight: bold;');
-    console.log('%c💻 Ingeniero de Sistemas', 'color: #f97316; font-size: 14px;');
-    console.log('%c📧 Siéntete libre de contactarme a través del formulario', 'color: #6366f1; font-size: 12px;');
+    // Ejecutar una vez al cargar la página para animar elementos ya visibles
+    animateOnScroll();
     
 });
 
