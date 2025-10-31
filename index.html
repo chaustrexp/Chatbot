@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración básica de la página -->
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio profesional de Cristian Contreras - Desarrollador de Software">
-    <title>Cristian Contreras - Portafolio</title>
+    <meta name="description" content="Portafolio profesional de Welinton Suarez - Ingeniero de Sistemas">
+    <title>Welinton Suarez - Ingeniero de Sistemas</title>
     
-    <!-- Importar tipografía de Google Fonts -->
+    <!-- Enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts - Fuente Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Enlazar archivo de estilos -->
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">
-                <span class="logo">CC</span>
-                <span class="brand-name">Cristian Contreras</span>
-            </div>
+            <div class="nav-brand">Welinton Suarez</div>
             <ul class="nav-menu">
                 <li><a href="#presentacion">Inicio</a></li>
                 <li><a href="#experiencia">Experiencia</a></li>
@@ -30,33 +27,41 @@
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
+            <!-- Menú hamburguesa para móvil -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Sección de Presentación -->
-    <section id="presentacion" class="presentacion">
+    <!-- Sección de Presentación / Hero -->
+    <section id="presentacion" class="hero">
         <div class="container">
-            <div class="presentacion-content">
+            <div class="hero-content">
                 <!-- Foto de perfil -->
                 <div class="profile-image-wrapper">
-                    <img src="https://www.shutterstock.com/image-vector/default-avatar-profile-icon-vector-600nw-1725655669.jpg" 
-                         alt="Cristian Contreras" 
+                    <img src="https://res.cloudinary.com/dhbq6g12v/image/upload/v1761176898/744b4df1dd5f7b2dcc6003a9295e7e22_luejin.avif" 
+                         alt="Welinton Suarez - Ingeniero de Sistemas" 
                          class="profile-image">
                 </div>
                 
-                <!-- Información personal -->
-                <div class="presentacion-text">
-                    <h1 class="nombre">Cristian Contreras</h1>
-                    <h2 class="profesion">Desarrollador de Software</h2>
-                    <p class="descripcion">
-                        Desarrollador de Software apasionado por la tecnología y el desarrollo de soluciones innovadoras. 
-                        Especializado en desarrollo frontend, diseño gráfico (posters, afiches, branding) y desarrollo web. 
-                        Comprometido con la excelencia técnica y el aprendizaje continuo.
+                <!-- Información principal -->
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Welinton Suarez</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Ingeniero de Sistemas</h2>
+                    <p class="hero-description">
+                        Desarrollador apasionado por crear soluciones tecnológicas innovadoras. 
+                        Especializado en desarrollo web, arquitectura de software y transformación digital. 
+                        Comprometido con la excelencia técnica y la mejora continua.
                     </p>
                     
                     <!-- Botones de acción -->
-                    <div class="action-buttons">
-                        <a href="#contacto" class="btn btn-primary">Contáctame</a>
+                    <div class="hero-buttons">
+                        <a href="#contacto" class="btn btn-primary">Contactar</a>
                         <a href="#proyectos" class="btn btn-secondary">Ver Proyectos</a>
                     </div>
                 </div>
@@ -65,242 +70,416 @@
     </section>
 
     <!-- Sección de Experiencia -->
-    <section id="experiencia" class="experiencia">
+    <section id="experiencia" class="experience">
         <div class="container">
-            <h2 class="section-title">Experiencia Laboral</h2>
-            <div class="experiencia-grid">
-                <!-- Tarjeta de experiencia 1 -->
-                <div class="experiencia-card">
-                    <div class="experiencia-header">
-                        <h3>Desarrollador Frontend Senior</h3>
-                        <span class="fecha">2022 - Presente</span>
+            <h2 class="section-title">Experiencia Profesional</h2>
+            <div class="experience-timeline">
+                
+                <!-- Experiencia 1 -->
+                <div class="experience-card">
+                    <div class="experience-date">2022 - Presente</div>
+                    <div class="experience-content">
+                        <h3 class="experience-position">Senior Software Engineer</h3>
+                        <h4 class="experience-company">Tech Solutions Corp</h4>
+                        <p class="experience-description">
+                            Lidero el desarrollo de aplicaciones web escalables utilizando tecnologías modernas. 
+                            Gestiono equipos de desarrollo y colaboro en la arquitectura de sistemas distribuidos. 
+                            Implementé mejoras que aumentaron el rendimiento en un 40%.
+                        </p>
+                        <ul class="experience-tags">
+                            <li>JavaScript</li>
+                            <li>Node.js</li>
+                            <li>React</li>
+                            <li>AWS</li>
+                        </ul>
                     </div>
-                    <h4 class="empresa">Tech Solutions S.A.</h4>
-                    <p class="descripcion-experiencia">
-                        Desarrollo de interfaces de usuario modernas y responsivas. Especialización en React, Vue.js y diseño 
-                        de experiencias de usuario. Diseño gráfico de posters, afiches y material promocional para eventos y campañas.
-                    </p>
                 </div>
 
-                <!-- Tarjeta de experiencia 2 -->
-                <div class="experiencia-card">
-                    <div class="experiencia-header">
-                        <h3>Desarrollador Frontend</h3>
-                        <span class="fecha">2020 - 2022</span>
+                <!-- Experiencia 2 -->
+                <div class="experience-card">
+                    <div class="experience-date">2020 - 2022</div>
+                    <div class="experience-content">
+                        <h3 class="experience-position">Full Stack Developer</h3>
+                        <h4 class="experience-company">Digital Innovations</h4>
+                        <p class="experience-description">
+                            Desarrollé y mantuve aplicaciones web completas desde el frontend hasta el backend. 
+                            Participé en proyectos de migración a la nube y optimización de bases de datos. 
+                            Capacité a nuevos miembros del equipo en mejores prácticas de desarrollo.
+                        </p>
+                        <ul class="experience-tags">
+                            <li>Python</li>
+                            <li>Django</li>
+                            <li>PostgreSQL</li>
+                            <li>Docker</li>
+                        </ul>
                     </div>
-                    <h4 class="empresa">Digital Innovations Corp</h4>
-                    <p class="descripcion-experiencia">
-                        Desarrollo de aplicaciones web frontend utilizando tecnologías modernas como React, JavaScript y CSS3. 
-                        Diseño y creación de afiches publicitarios, posters para eventos y material gráfico corporativo. 
-                        Implementación de interfaces responsivas y atractivas visualmente.
-                    </p>
                 </div>
 
-                <!-- Tarjeta de experiencia 3 -->
-                <div class="experiencia-card">
-                    <div class="experiencia-header">
-                        <h3>Desarrollador Frontend Jr.</h3>
-                        <span class="fecha">2018 - 2020</span>
+                <!-- Experiencia 3 -->
+                <div class="experience-card">
+                    <div class="experience-date">2018 - 2020</div>
+                    <div class="experience-content">
+                        <h3 class="experience-position">Desarrollador Junior</h3>
+                        <h4 class="experience-company">StartUp Tech</h4>
+                        <p class="experience-description">
+                            Comencé mi carrera desarrollando funcionalidades para plataformas SaaS. 
+                            Trabajé en un ambiente ágil colaborando con diseñadores y product managers. 
+                            Contribuí al lanzamiento exitoso de tres productos digitales.
+                        </p>
+                        <ul class="experience-tags">
+                            <li>HTML/CSS</li>
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                            <li>MySQL</li>
+                        </ul>
                     </div>
-                    <h4 class="empresa">StartUp Tech</h4>
-                    <p class="descripcion-experiencia">
-                        Desarrollo de aplicaciones web desde cero. Diseño gráfico de posters y afiches para marketing digital. 
-                        Participación activa en el diseño de interfaces y creación de material visual para campañas publicitarias.
-                    </p>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Sección de Habilidades -->
-    <section id="habilidades" class="habilidades">
+    <section id="habilidades" class="skills">
         <div class="container">
             <h2 class="section-title">Habilidades Destacadas</h2>
-            <div class="habilidades-grid">
-                <!-- Habilidad 1 - Frontend -->
-                <div class="habilidad-card habilidad-featured">
-                    <div class="habilidad-icon">⚡</div>
-                    <h3>Desarrollo Frontend</h3>
-                    <p>React, Vue.js, Angular, TypeScript, Next.js, Tailwind CSS</p>
+            <div class="skills-grid">
+                
+                <!-- Categoría: Frontend -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">TypeScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Habilidad 2 - Frontend -->
-                <div class="habilidad-card">
-                    <div class="habilidad-icon">💻</div>
-                    <h3>HTML5 & CSS3</h3>
-                    <p>Diseño responsive, SASS, BEM, Animaciones CSS, Flexbox, Grid</p>
+                <!-- Categoría: Backend -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">REST APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Habilidad 3 - Frontend -->
-                <div class="habilidad-card">
-                    <div class="habilidad-icon">🎯</div>
-                    <h3>JavaScript Moderno</h3>
-                    <p>ES6+, APIs REST, Async/Await, Node.js, Webpack, Vite</p>
+                <!-- Categoría: Herramientas -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Herramientas & DevOps</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Git</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">AWS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Linux</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Habilidad 4 - Diseño Gráfico -->
-                <div class="habilidad-card habilidad-featured">
-                    <div class="habilidad-icon">🎨</div>
-                    <h3>Diseño Gráfico</h3>
-                    <p>Posters, Afiches, Branding, Identidad Visual, Marketing Digital</p>
-                </div>
-
-                <!-- Habilidad 5 - Diseño Gráfico -->
-                <div class="habilidad-card">
-                    <div class="habilidad-icon">🖼️</div>
-                    <h3>Adobe Creative Suite</h3>
-                    <p>Photoshop, Illustrator, InDesign, After Effects, XD</p>
-                </div>
-
-                <!-- Habilidad 6 - Diseño Gráfico -->
-                <div class="habilidad-card">
-                    <div class="habilidad-icon">✨</div>
-                    <h3>UI/UX Design</h3>
-                    <p>Figma, Sketch, Prototipado, Design Systems, User Research</p>
-                </div>
-
-                <!-- Habilidad 7 - Herramientas -->
-                <div class="habilidad-card">
-                    <div class="habilidad-icon">🔧</div>
-                    <h3>Herramientas</h3>
-                    <p>Git, GitHub, VS Code, Figma, Postman, Chrome DevTools</p>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Sección de Proyectos -->
-    <section id="proyectos" class="proyectos">
+    <section id="proyectos" class="projects">
         <div class="container">
             <h2 class="section-title">Proyectos Destacados</h2>
-            <div class="proyectos-grid">
+            <div class="projects-grid">
+                
                 <!-- Proyecto 1 -->
-                <div class="proyecto-card">
-                    <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop" alt="Proyecto E-Commerce">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://picsum.photos/400/250?random=1" 
+                             alt="E-Commerce Platform" 
+                             class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">Ver más</a>
+                        </div>
                     </div>
-                    <div class="proyecto-content">
-                        <h3>Plataforma E-Commerce</h3>
-                        <p>Sistema completo de comercio electrónico con panel de administración, gestión de inventario 
-                           y pasarela de pagos integrada. Desarrollado con React y Node.js.</p>
-                        <button class="btn-ver-mas">Ver más</button>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">
+                            Plataforma de comercio electrónico completa con carrito de compras, 
+                            sistema de pagos y panel de administración. Construida con React y Node.js.
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 2 -->
-                <div class="proyecto-card">
-                    <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Sistema de Gestión">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://picsum.photos/400/250?random=2" 
+                             alt="Task Management App" 
+                             class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">Ver más</a>
+                        </div>
                     </div>
-                    <div class="proyecto-content">
-                        <h3>Sistema de Gestión ERP</h3>
-                        <p>Aplicación empresarial para gestión de recursos, finanzas y recursos humanos. 
-                           Incluye dashboards interactivos y reportes en tiempo real.</p>
-                        <button class="btn-ver-mas">Ver más</button>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">
+                            Aplicación de gestión de tareas con funcionalidades de colaboración en tiempo real, 
+                            usando WebSockets para actualizaciones instantáneas.
+                        </p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Python</span>
+                            <span>Socket.io</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 3 -->
-                <div class="proyecto-card">
-                    <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop" alt="App Móvil">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://picsum.photos/400/250?random=3" 
+                             alt="Analytics Dashboard" 
+                             class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">Ver más</a>
+                        </div>
                     </div>
-                    <div class="proyecto-content">
-                        <h3>App Móvil de Productividad</h3>
-                        <p>Aplicación móvil multiplataforma para gestión de tareas y productividad personal. 
-                           Sincronización en la nube y notificaciones inteligentes.</p>
-                        <button class="btn-ver-mas">Ver más</button>
+                    <div class="project-content">
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Dashboard interactivo para visualización de datos empresariales con gráficos 
+                            dinámicos y reportes personalizables.
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>D3.js</span>
+                            <span>Express</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 4 -->
-                <div class="proyecto-card">
-                    <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Dashboard Analytics">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://picsum.photos/400/250?random=4" 
+                             alt="Mobile Banking App" 
+                             class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">Ver más</a>
+                        </div>
                     </div>
-                    <div class="proyecto-content">
-                        <h3>Dashboard de Analytics</h3>
-                        <p>Plataforma de visualización de datos con gráficos interactivos y análisis predictivo. 
-                           Construido con tecnologías modernas de big data.</p>
-                        <button class="btn-ver-mas">Ver más</button>
+                    <div class="project-content">
+                        <h3 class="project-title">Mobile Banking App</h3>
+                        <p class="project-description">
+                            Aplicación móvil bancaria con seguridad avanzada, transferencias, 
+                            pagos y seguimiento de transacciones en tiempo real.
+                        </p>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>REST API</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 5 -->
-                <div class="proyecto-card">
-                    <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop" alt="API REST">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://picsum.photos/400/250?random=5" 
+                             alt="Social Media Platform" 
+                             class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">Ver más</a>
+                        </div>
                     </div>
-                    <div class="proyecto-content">
-                        <h3>API REST Microservicios</h3>
-                        <p>Arquitectura de microservicios escalable con autenticación JWT, rate limiting y 
-                           documentación automática con Swagger.</p>
-                        <button class="btn-ver-mas">Ver más</button>
+                    <div class="project-content">
+                        <h3 class="project-title">Social Media Platform</h3>
+                        <p class="project-description">
+                            Red social moderna con feed personalizado, mensajería, 
+                            sistema de notificaciones y análisis de engagement.
+                        </p>
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>PostgreSQL</span>
+                            <span>Redis</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 6 -->
-                <div class="proyecto-card">
-                    <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=250&fit=crop" alt="Red Social">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://picsum.photos/400/250?random=6" 
+                             alt="AI Chatbot System" 
+                             class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">Ver más</a>
+                        </div>
                     </div>
-                    <div class="proyecto-content">
-                        <h3>Red Social Profesional</h3>
-                        <p>Plataforma social para profesionales con funcionalidades de networking, chat en tiempo real 
-                           y sistema de recomendaciones basado en IA.</p>
-                        <button class="btn-ver-mas">Ver más</button>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Chatbot System</h3>
+                        <p class="project-description">
+                            Sistema de chatbot inteligente con procesamiento de lenguaje natural 
+                            y integración con múltiples plataformas de comunicación.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>FastAPI</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Sección de Contacto -->
-    <section id="contacto" class="contacto">
+    <section id="contacto" class="contact">
         <div class="container">
             <h2 class="section-title">Contacto</h2>
-            <div class="contacto-content">
+            <div class="contact-content">
+                
                 <!-- Formulario de contacto -->
-                <div class="contacto-form-wrapper">
-                    <form id="contacto-form" class="contacto-form">
-                        <!-- Campo: Nombre -->
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" required>
+                            <input type="text" 
+                                   id="nombre" 
+                                   name="nombre" 
+                                   required 
+                                   placeholder="Tu nombre completo">
                         </div>
-
-                        <!-- Campo: Correo -->
+                        
                         <div class="form-group">
                             <label for="correo">Correo Electrónico</label>
-                            <input type="email" id="correo" name="correo" required>
+                            <input type="email" 
+                                   id="correo" 
+                                   name="correo" 
+                                   required 
+                                   placeholder="tu@email.com">
                         </div>
-
-                        <!-- Campo: Mensaje -->
+                        
                         <div class="form-group">
                             <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                            <textarea id="mensaje" 
+                                      name="mensaje" 
+                                      rows="6" 
+                                      required 
+                                      placeholder="Escribe tu mensaje aquí..."></textarea>
                         </div>
-
-                        <!-- Botón de envío -->
-                        <button type="submit" class="btn btn-primary btn-submit">Enviar Mensaje</button>
+                        
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            Enviar Mensaje
+                        </button>
                     </form>
                 </div>
 
-                <!-- Enlaces a redes sociales -->
+                <!-- Enlaces de redes sociales -->
                 <div class="social-links">
-                    <h3>Conéctate conmigo</h3>
+                    <h3 class="social-title">Conéctate conmigo</h3>
+                    <p class="social-description">
+                        Puedes encontrarme en estas plataformas profesionales:
+                    </p>
                     <div class="social-icons">
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon linkedin">
+                        <a href="https://www.linkedin.com" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="social-icon linkedin"
+                           aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon github">
+                        
+                        <a href="https://www.github.com" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="social-icon github"
+                           aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
                             <span>GitHub</span>
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon twitter">
+                        
+                        <a href="https://www.twitter.com" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="social-icon twitter"
+                           aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
                             <span>X (Twitter)</span>
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -308,11 +487,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Cristian Contreras – Todos los derechos reservados.</p>
+            <p class="footer-text">
+                © 2025 Welinton Suares – Todos los derechos reservados.
+            </p>
         </div>
     </footer>
 
-    <!-- Enlazar archivo de JavaScript -->
+    <!-- Script JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
