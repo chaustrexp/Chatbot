@@ -15,7 +15,24 @@
     <!-- Enlazar archivo de estilos -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="loading">
+    <!-- Loader Épico de Entrada -->
+    <div class="loader" id="loader">
+        <div class="loader-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="loader-content">
+            <div class="loader-logo">CC</div>
+            <div class="loader-name">Cristian Contreras</div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
     <!-- Barra de navegación -->
     <nav class="navbar">
         <div class="container">
@@ -27,6 +44,8 @@
                 <li><a href="#presentacion">Inicio</a></li>
                 <li><a href="#experiencia">Experiencia</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#logros">Logros</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -39,7 +58,7 @@
             <div class="presentacion-content">
                 <!-- Foto de perfil -->
                 <div class="profile-image-wrapper">
-                    <img src="https://www.shutterstock.com/image-vector/default-avatar-profile-icon-vector-600nw-1725655669.jpg" 
+                    <img src="https://ih1.redbubble.net/image.5011498882.9325/fpp,medium,metallic,wall_texture,product,750x1000.webp" 
                          alt="Cristian Contreras" 
                          class="profile-image">
                 </div>
@@ -49,9 +68,13 @@
                     <h1 class="nombre">Cristian Contreras</h1>
                     <h2 class="profesion">Desarrollador de Software</h2>
                     <p class="descripcion">
-                        Desarrollador de Software apasionado por la tecnología y el desarrollo de soluciones innovadoras. 
-                        Especializado en desarrollo frontend, diseño gráfico (posters, afiches, branding) y desarrollo web. 
-                        Comprometido con la excelencia técnica y el aprendizaje continuo.
+                        ¡Hola! Soy Cristian Contreras, tengo 19 años y soy estudiante del SENA en el programa de Desarrollo de Software. Soy un apasionado por la tecnología, el diseño y la creación de soluciones innovadoras que generen impacto.
+                    </p>
+                    <p class="descripcion">
+                        Me especializo en desarrollo frontend, diseño gráfico (posters, afiches, branding) y desarrollo web, combinando la lógica del código con la creatividad visual. Me considero una persona comprometida con la excelencia técnica, el aprendizaje continuo y el trabajo en equipo.
+                    </p>
+                    <p class="descripcion">
+                        En mi tiempo libre disfruto escuchar música, jugar voleibol, practicar inglés, hacer ejercicio y ver series y películas. Además, me encanta el diseño y recientemente fui ganador de la Hackathon Cúcuta 2025, una experiencia que fortaleció mis habilidades de innovación y resolución de problemas.
                     </p>
                     
                     <!-- Botones de acción -->
@@ -73,7 +96,7 @@
                 <div class="experiencia-card">
                     <div class="experiencia-header">
                         <h3>Desarrollador Frontend Senior</h3>
-                        <span class="fecha">2022 - Presente</span>
+                        <span class="fecha">2025</span>
                     </div>
                     <h4 class="empresa">Tech Solutions S.A.</h4>
                     <p class="descripcion-experiencia">
@@ -86,7 +109,7 @@
                 <div class="experiencia-card">
                     <div class="experiencia-header">
                         <h3>Desarrollador Frontend</h3>
-                        <span class="fecha">2020 - 2022</span>
+                        <span class="fecha">2025</span>
                     </div>
                     <h4 class="empresa">Digital Innovations Corp</h4>
                     <p class="descripcion-experiencia">
@@ -100,7 +123,7 @@
                 <div class="experiencia-card">
                     <div class="experiencia-header">
                         <h3>Desarrollador Frontend Jr.</h3>
-                        <span class="fecha">2018 - 2020</span>
+                        <span class="fecha">2025</span>
                     </div>
                     <h4 class="empresa">StartUp Tech</h4>
                     <p class="descripcion-experiencia">
@@ -165,6 +188,92 @@
                     <h3>Herramientas</h3>
                     <p>Git, GitHub, VS Code, Figma, Postman, Chrome DevTools</p>
                 </div>
+
+                <!-- Habilidad 8 - Backend -->
+                <div class="habilidad-card">
+                    <div class="habilidad-icon">⚙️</div>
+                    <h3>Desarrollo Backend</h3>
+                    <p>Node.js, Express, APIs REST, Bases de datos - 25%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Logros -->
+    <section id="logros" class="logros">
+        <div class="container">
+            <h2 class="section-title">Logros</h2>
+            <div class="logros-grid">
+                <!-- Logro 1 -->
+                <div class="logro-card">
+                    <div class="logro-icon">🏆</div>
+                    <h3>Ganador Hackathon Cúcuta 2025</h3>
+                    <p>Ganador de la Hackathon Cúcuta 2025, una experiencia que fortaleció mis habilidades de innovación y resolución de problemas</p>
+                </div>
+
+                <!-- Logro 2 -->
+                <div class="logro-card">
+                    <div class="logro-icon">📚</div>
+                    <h3>Mejora en Inglés</h3>
+                    <p>Completado niveles A1 y A2, actualmente con un nivel de inglés intermedio en constante mejora</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Hobbies -->
+    <section id="hobbies" class="hobbies">
+        <div class="container">
+            <h2 class="section-title">Hobbies</h2>
+            <div class="hobbies-grid">
+                <!-- Hobby 1 -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎵</div>
+                    <h3>Escuchar Música</h3>
+                    <p>Música en inglés y español</p>
+                </div>
+
+                <!-- Hobby 2 -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">📖</div>
+                    <h3>Practicar Inglés</h3>
+                    <p>Mejora continua del idioma</p>
+                </div>
+
+                <!-- Hobby 3 -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">🏐</div>
+                    <h3>Jugar Voleibol</h3>
+                    <p>Deporte favorito</p>
+                </div>
+
+                <!-- Hobby 4 -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">💪</div>
+                    <h3>Hacer Ejercicio</h3>
+                    <p>Actividad física regular</p>
+                </div>
+
+                <!-- Hobby 5 -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎬</div>
+                    <h3>Ver Series y Películas</h3>
+                    <p>Entretenimiento y cultura</p>
+                </div>
+
+                <!-- Hobby 6 -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">✨</div>
+                    <h3>Diseñar</h3>
+                    <p>Expresión creativa</p>
+                </div>
+
+                <!-- Hobby 7 -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">💃</div>
+                    <h3>Bailar</h3>
+                    <p>Expresión corporal</p>
+                </div>
             </div>
         </div>
     </section>
@@ -177,12 +286,12 @@
                 <!-- Proyecto 1 -->
                 <div class="proyecto-card">
                     <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop" alt="Proyecto E-Commerce">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=250&fit=crop" alt="Plataforma tipo LinkedIn">
                     </div>
                     <div class="proyecto-content">
-                        <h3>Plataforma E-Commerce</h3>
-                        <p>Sistema completo de comercio electrónico con panel de administración, gestión de inventario 
-                           y pasarela de pagos integrada. Desarrollado con React y Node.js.</p>
+                        <h3>Plataforma tipo LinkedIn</h3>
+                        <p>Red social profesional inspirada en LinkedIn. Desarrollo de perfiles de usuario, conexiones profesionales, 
+                           feed de publicaciones, sistema de mensajería y búsqueda avanzada. Desarrollado con tecnologías modernas.</p>
                         <button class="btn-ver-mas">Ver más</button>
                     </div>
                 </div>
@@ -190,12 +299,13 @@
                 <!-- Proyecto 2 -->
                 <div class="proyecto-card">
                     <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Sistema de Gestión">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Sistema de Gestión de Cuenta Dantes">
                     </div>
                     <div class="proyecto-content">
-                        <h3>Sistema de Gestión ERP</h3>
-                        <p>Aplicación empresarial para gestión de recursos, finanzas y recursos humanos. 
-                           Incluye dashboards interactivos y reportes en tiempo real.</p>
+                        <h3>Sistema de Gestión de Cuenta Dantes</h3>
+                        <p>Sistema completo para gestión de cuenta dantes con funcionalidades de entrada y salida, asignación de uno 
+                           o varios bienes a un cuenta dante, y transferencia de cuenta dantes entre diferentes responsables. 
+                           Incluye control de inventario y trazabilidad.</p>
                         <button class="btn-ver-mas">Ver más</button>
                     </div>
                 </div>
@@ -203,51 +313,13 @@
                 <!-- Proyecto 3 -->
                 <div class="proyecto-card">
                     <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop" alt="App Móvil">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop" alt="Proyecto Reto Hackathon">
                     </div>
                     <div class="proyecto-content">
-                        <h3>App Móvil de Productividad</h3>
-                        <p>Aplicación móvil multiplataforma para gestión de tareas y productividad personal. 
-                           Sincronización en la nube y notificaciones inteligentes.</p>
-                        <button class="btn-ver-mas">Ver más</button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 4 -->
-                <div class="proyecto-card">
-                    <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Dashboard Analytics">
-                    </div>
-                    <div class="proyecto-content">
-                        <h3>Dashboard de Analytics</h3>
-                        <p>Plataforma de visualización de datos con gráficos interactivos y análisis predictivo. 
-                           Construido con tecnologías modernas de big data.</p>
-                        <button class="btn-ver-mas">Ver más</button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 5 -->
-                <div class="proyecto-card">
-                    <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop" alt="API REST">
-                    </div>
-                    <div class="proyecto-content">
-                        <h3>API REST Microservicios</h3>
-                        <p>Arquitectura de microservicios escalable con autenticación JWT, rate limiting y 
-                           documentación automática con Swagger.</p>
-                        <button class="btn-ver-mas">Ver más</button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 6 -->
-                <div class="proyecto-card">
-                    <div class="proyecto-image">
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=250&fit=crop" alt="Red Social">
-                    </div>
-                    <div class="proyecto-content">
-                        <h3>Red Social Profesional</h3>
-                        <p>Plataforma social para profesionales con funcionalidades de networking, chat en tiempo real 
-                           y sistema de recomendaciones basado en IA.</p>
+                        <h3>Proyecto Reto Hackathon</h3>
+                        <p>Proyecto desarrollado durante la Hackathon Cúcuta 2025. Solución innovadora creada en tiempo limitado, 
+                           demostrando habilidades de trabajo en equipo, innovación y resolución de problemas. Proyecto ganador 
+                           que destaca por su creatividad e impacto.</p>
                         <button class="btn-ver-mas">Ver más</button>
                     </div>
                 </div>
@@ -296,8 +368,17 @@
                         <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon github">
                             <span>GitHub</span>
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon twitter">
-                            <span>X (Twitter)</span>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-icon pinterest">
+                            <span>Pinterest</span>
+                        </a>
+                        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-icon discord">
+                            <span>Discord</span>
+                        </a>
+                        <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp">
+                            <span>WhatsApp</span>
                         </a>
                     </div>
                 </div>
